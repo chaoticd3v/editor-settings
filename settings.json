@@ -1,5 +1,6 @@
 {
     "editor.formatOnSave": true,
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
     "[python]": {
         "editor.insertSpaces": true,
         "editor.tabSize": 4,
@@ -7,6 +8,14 @@
             "source.organizeImports": true
         }
     },
+    "python.linting.enabled": true,
+    "python.linting.lintOnSave": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintPath": "${workspaceFolder}/.venv/bin/pylint",
+    "python.linting.pylintArgs": [
+        "--init-hook",
+        "import sys; sys.path.append('.')"
+    ],
     "python.formatting.provider": "black",
     "python.formatting.blackArgs": [
         "--config",
@@ -15,5 +24,8 @@
     "python.sortImports.args": [
         "--settings-path",
         "${workspaceFolder}/pyproject.toml"
+    ],
+    "python.analysis.extraPaths": [
+        "./"
     ]
 }
